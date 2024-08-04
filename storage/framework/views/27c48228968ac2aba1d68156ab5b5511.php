@@ -30,6 +30,13 @@
 
 <head>
     <title><?php echo e(env('APP_NAME')); ?></title>
+
+    <!-- Google tag (gtag.js) -->
+    <?php echo $adminSettings['google_analytics_code']; ?>
+
+
+    
+
     <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />

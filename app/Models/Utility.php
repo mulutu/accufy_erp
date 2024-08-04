@@ -109,7 +109,7 @@ class Utility extends Model
             "qr_display" => 'on',
             "bill_qr_display" => 'on',
             "invoice_qr_display" => 'on',
-            "pos_purchase_qr_display" => 'on',            
+            "pos_purchase_qr_display" => 'on',
             "registration_number" => "",
             "vat_number" => "",
             "default_language" => "en",
@@ -233,6 +233,7 @@ class Utility extends Model
             'cookie_description' => 'Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it',
             'strictly_cookie_title' => 'Strictly necessary cookies',
             'strictly_cookie_description' => 'These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly',
+            'google_analytics_code' => '',
             'more_information_description' => 'For any queries in relation to our policy on cookies and your choices, please contact us',
             'contactus_url' => '#',
 
@@ -446,6 +447,7 @@ class Utility extends Model
             'cookie_description' => 'Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it',
             'strictly_cookie_title' => 'Strictly necessary cookies',
             'strictly_cookie_description' => 'These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly',
+            'google_analytics_code' => '',
             'more_information_description' => 'For any queries in relation to our policy on cookies and your choices, please contact us',
             'contactus_url' => '#',
 

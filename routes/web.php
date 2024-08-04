@@ -1709,6 +1709,9 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('generate/keywords/{id}', [AiTemplateController::class, 'getKeywords'])->name('generate.keywords');
     Route::post('generate/response', [AiTemplateController::class, 'AiGenerate'])->name('generate.response');
 
+    // Google Analytics Settings
+    Route::post('googleanalytics-settings', [SystemController::class, 'googleAnalyticsSetting'])->name('googleanalytics.settings');
+
     //AI module for grammar check
     Route::get('grammar/{template}', [AiTemplateController::class, 'grammar'])->name('grammar')->middleware(['auth', 'XSS']);
     Route::post('grammar/response', [AiTemplateController::class, 'grammarProcess'])->name('grammar.response')->middleware(['auth', 'XSS']);

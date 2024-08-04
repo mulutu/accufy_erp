@@ -2418,7 +2418,6 @@ class SystemController extends Controller
     //chat gpt setting
     public function chatgptSetting(Request $request)
     {
-
         $post = $request->all();
         unset($post['_token']);
         $created_by = \Auth::user()->creatorId();
@@ -2435,6 +2434,27 @@ class SystemController extends Controller
             );
         }
         return redirect()->back()->with('success', __('ChatGPT Setting successfully saved.'));
+    }
+
+    //google analytics setting
+    public function googleAnalyticsSetting(Request $request)
+    {
+        $post = $request->all();
+        unset($post['_token']);
+        $created_by = \Auth::user()->creatorId();
+        foreach ($post as $key => $data) {
+            \DB::insert(
+                'insert into settings (`value`, `name`,`created_by`,`created_at`,`updated_at`) values (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE `value` = VALUES(`value`) ',
+                [
+                    $data,
+                    $key,
+                    $created_by,
+                    date('Y-m-d H:i:s'),
+                    date('Y-m-d H:i:s'),
+                ]
+            );
+        }
+        return redirect()->back()->with('success', __('Goggle Analytics Setting successfully saved.'));
     }
 
     //ip settings
