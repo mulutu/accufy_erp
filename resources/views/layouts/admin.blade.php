@@ -38,6 +38,9 @@
     <title>{{ $setting['title_text'] ? $setting['title_text'] : config('app.name', 'ERPGO') }} - @yield('page-title')
     </title>
 
+    <!-- Google tag (gtag.js) -->
+    {!! $setting['google_analytics_code'] !!}
+
     <meta name="title" content="{{ $metatitle }}">
     <meta name="description" content="{{ $metsdesc }}">
 
