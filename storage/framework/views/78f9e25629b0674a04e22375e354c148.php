@@ -1,6 +1,7 @@
 <?php
     use App\Models\Utility;
     $setting = \App\Models\Utility::settings();
+    $analyticsCode = \App\Models\Utility::getGoogleAnalyticsCode();
 
     $logo = \App\Models\Utility::get_file('uploads/logo');
 
@@ -39,7 +40,7 @@
     </title>
 
     <!-- Google tag (gtag.js) xxxxx-->
-    <?php echo $setting['google_analytics_code']; ?>
+    <?php echo $analyticsCode['google_analytics_code']; ?>
 
 
     <meta name="title" content="<?php echo e($metatitle); ?>">

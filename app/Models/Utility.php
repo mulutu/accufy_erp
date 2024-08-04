@@ -4012,6 +4012,17 @@ class Utility extends Model
         return $setting;
     }
 
+    public static function getGoogleAnalyticsCode()
+    {
+        $data = \DB::table('settings')->whereIn('name', ['google_analytics_code'])->get();
+        $settings = [];
+        foreach ($data as $row) {
+            $settings[$row->name] = $row->value;
+        }
+        return $settings;
+    }
+
+
     public static function getSeoSetting()
     {
         $data = \DB::table('settings')->whereIn('name', ['meta_title', 'meta_desc', 'meta_image'])->get();
