@@ -38,6 +38,10 @@
     <title><?php echo e($setting['title_text'] ? $setting['title_text'] : config('app.name', 'ERPGO')); ?> - <?php echo $__env->yieldContent('page-title'); ?>
     </title>
 
+    <!-- Google tag (gtag.js) xxxxx-->
+    <?php echo $setting['google_analytics_code']; ?>
+
+
     <meta name="title" content="<?php echo e($metatitle); ?>">
     <meta name="description" content="<?php echo e($metsdesc); ?>">
 
