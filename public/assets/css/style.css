@@ -18448,6 +18448,7 @@ body:not(.minimenu) .dash-sidebar .dash-submenu .dash-submenu .dash-submenu > .d
         box-shadow: none;
     }
 
+    /* UPFATED FOR ACCUSFY ERP */
     .dash-header:not(.transprent-bg) {
         top: 0px; /* 20px */
         left: calc(255px + 0px); /* calc(255px + 40px); */
