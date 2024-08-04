@@ -20,6 +20,15 @@ jobs:
         source: "."
         target: "/home/accufy_erp/public/"
 
+    - name: Change ownership to www-data
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSHKEY }}
+        script: sudo chown -R www-data:www-data /home/accufy_erp/public/
+
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
