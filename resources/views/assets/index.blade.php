@@ -31,6 +31,7 @@
                             <thead>
                             <tr>
                                 <th>{{__('Name')}}</th>
+                                <th>{{__('Serial Number')}}</th>
                                 <th>{{__('Users')}}</th>
                                 <th>{{__('Purchase Date')}}</th>
                                 <th>{{__('Supported Date')}}</th>
@@ -43,6 +44,7 @@
                             @foreach ($assets as $asset)
                                 <tr>
                                     <td class="font-style">{{ $asset->name }}</td>
+                                    <td class="font-style">{{ $asset->serial_number }}</td>
                                     <td>
                                         <div class="avatar-group">
                                             @foreach($asset->users($asset->employee_id) as $user)

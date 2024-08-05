@@ -49,6 +49,7 @@ class AssetController extends Controller
                                    'purchase_date' => 'required',
                                    'supported_date' => 'required',
                                    'amount' => 'required',
+                                   'serial_number' => 'required',
                                ]
             );
             if($validator->fails())
@@ -61,6 +62,7 @@ class AssetController extends Controller
             $assets                 = new Asset();
             $assets->employee_id         = !empty($request->employee_id) ? implode(',', $request->employee_id) : '';
             $assets->name           = $request->name;
+            $assets->serial_number  = $request->serial_number;
             $assets->purchase_date  = $request->purchase_date;
             $assets->supported_date = $request->supported_date;
             $assets->amount         = $request->amount;
@@ -84,15 +86,11 @@ class AssetController extends Controller
 
     public function edit($id)
     {
-
         if(\Auth::user()->can('edit assets'))
         {
             $asset = Asset::find($id);
             $employee      = Employee::where('created_by', \Auth::user()->creatorId())->get()->pluck('name', 'id');
             $asset->employee_id      = explode(',', $asset->employee_id);
-
-
-
             return view('assets.edit', compact('asset','employee'));
         }
         else
@@ -115,6 +113,7 @@ class AssetController extends Controller
                                        'purchase_date' => 'required',
                                        'supported_date' => 'required',
                                        'amount' => 'required',
+                                       'serial_number' => 'required',
                                    ]
                 );
                 if($validator->fails())
@@ -125,7 +124,8 @@ class AssetController extends Controller
                 }
 
                 $asset->name           = $request->name;
-                $asset->employee_id         = !empty($request->employee_id) ? implode(',', $request->employee_id) : '';
+                $asset->serial_number  = $request->serial_number;
+                $asset->employee_id    = !empty($request->employee_id) ? implode(',', $request->employee_id) : '';
 
                 $asset->purchase_date  = $request->purchase_date;
                 $asset->supported_date = $request->supported_date;

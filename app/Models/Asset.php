@@ -8,6 +8,7 @@ class Asset extends Model
 {
     protected $fillable = [
         'name',
+        'serial_number',
         'purchase_date',
         'supported_date',
         'amount',
@@ -23,12 +24,12 @@ class Asset extends Model
     public function users($users)
     {
         $userIds = explode(',', $users);
-    
+
         // Use eager loading to fetch users for the given employee IDs
         $users = User::whereIn('id', $userIds)
             ->with('employee')
             ->get();
-    
+
         return $users;
     }
 
