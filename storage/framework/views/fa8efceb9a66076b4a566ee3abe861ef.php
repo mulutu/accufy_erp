@@ -30,12 +30,12 @@
                         <table class="table datatable">
                             <thead>
                             <tr>
-                                <th><?php echo e(__('Name')); ?></th>
+                                <th><?php echo e(__('Name of Asset')); ?></th>
                                 <th><?php echo e(__('Serial Number')); ?></th>
                                 <th><?php echo e(__('Users')); ?></th>
                                 <th><?php echo e(__('Purchase Date')); ?></th>
                                 <th><?php echo e(__('Supported Date')); ?></th>
-                                <th><?php echo e(__('Amount')); ?></th>
+                                <th><?php echo e(__('Cost of Asset')); ?></th>
                                 <th><?php echo e(__('Description')); ?></th>
                                 <th><?php echo e(__('Action')); ?></th>
                             </tr>

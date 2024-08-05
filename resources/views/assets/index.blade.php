@@ -30,12 +30,12 @@
                         <table class="table datatable">
                             <thead>
                             <tr>
-                                <th>{{__('Name')}}</th>
+                                <th>{{__('Name of Asset')}}</th>
                                 <th>{{__('Serial Number')}}</th>
                                 <th>{{__('Users')}}</th>
                                 <th>{{__('Purchase Date')}}</th>
                                 <th>{{__('Supported Date')}}</th>
-                                <th>{{__('Amount')}}</th>
+                                <th>{{__('Cost of Asset')}}</th>
                                 <th>{{__('Description')}}</th>
                                 <th>{{__('Action')}}</th>
                             </tr>

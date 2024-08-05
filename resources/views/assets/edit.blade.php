@@ -23,11 +23,11 @@
             {{ Form::text('serial_number', null, array('class' => 'form-control','required'=>'required' , 'placeholder'=>__('Enter Serial Number'))) }}
         </div>
         <div class="form-group col-md-6">
-            {{ Form::label('name', __('Name'),['class'=>'form-label']) }}
+            {{ Form::label('name', __('Name of Asset'),['class'=>'form-label']) }}
             {{ Form::text('name', null, array('class' => 'form-control','required'=>'required')) }}
         </div>
         <div class="form-group col-md-6">
-            {{ Form::label('amount', __('Amount'),['class'=>'form-label']) }}
+            {{ Form::label('amount', __('Cost of Asset'),['class'=>'form-label']) }}
             {{ Form::number('amount', null, array('class' => 'form-control','required'=>'required','step'=>'0.01')) }}
         </div>
         <div class="form-group col-md-6">

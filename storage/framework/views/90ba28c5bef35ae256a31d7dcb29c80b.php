@@ -28,13 +28,13 @@
 
         </div>
         <div class="form-group col-md-6">
-            <?php echo e(Form::label('name', __('Name'),['class'=>'form-label'])); ?>
+            <?php echo e(Form::label('name', __('Name of Asset'),['class'=>'form-label'])); ?>
 
             <?php echo e(Form::text('name', '', array('class' => 'form-control','required'=>'required' , 'placeholder'=>__('Enter Name')))); ?>
 
         </div>
         <div class="form-group col-md-6">
-            <?php echo e(Form::label('amount', __('Amount'),['class'=>'form-label'])); ?>
+            <?php echo e(Form::label('amount', __('Cost of Asset'),['class'=>'form-label'])); ?>
 
             <?php echo e(Form::number('amount', '', array('class' => 'form-control','required'=>'required','step'=>'0.01','required'=> 'required'))); ?>
 
