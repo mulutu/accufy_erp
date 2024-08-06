@@ -12,6 +12,11 @@ class Employee extends Model
         'dob',
         'gender',
         'phone',
+        /* ADDED FOR ACCUFY ERP */
+        'national_id_number',
+        'revenue_authority_number',
+        'social_security_number',
+        'health_insurance_number',
         'address',
         'email',
         'password',

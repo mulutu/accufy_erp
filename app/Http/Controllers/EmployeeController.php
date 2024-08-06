@@ -92,12 +92,16 @@ class EmployeeController extends Controller
                                    'department_id' => 'required',
                                    'designation_id' => 'required',
                                    'biometric_emp_id' => 'required',
+                                   /* ADDED FOR ACCUFY ERP */
+                                   'national_id_number' => 'required',
+                                   'revenue_authority_number' => 'required',
+                                   'social_security_number' => 'required',
+                                   'health_insurance_number' => 'required',
                                ]
             );
             if($validator->fails())
             {
                 $messages = $validator->getMessageBag();
-
                 return redirect()->back()->withInput()->with('error', $messages->first());
             }
 
@@ -135,7 +139,7 @@ class EmployeeController extends Controller
             {
                 $document_implode = null;
             }
-            
+
             $employee = Employee::create(
                 [
                     'user_id' => $user->id,
@@ -143,6 +147,11 @@ class EmployeeController extends Controller
                     'dob' => $request['dob'],
                     'gender' => $request['gender'],
                     'phone' => $request['phone'],
+                    /* ADDED FOR ACCUFY ERP */
+                    'national_id_number' => $request['national_id_number'],
+                    'revenue_authority_number' => $request['revenue_authority_number'],
+                    'social_security_number' => $request['social_security_number'],
+                    'health_insurance_number' => $request['health_insurance_number'],
                     'address' => $request['address'],
                     'email' => $request['email'],
                     'password' => Hash::make($request['password']),
@@ -796,7 +805,7 @@ class EmployeeController extends Controller
 
                     $employeeData->save();
                 }
-            
+
 
             $errorRecord = [];
 
