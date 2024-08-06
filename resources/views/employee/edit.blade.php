@@ -51,7 +51,44 @@
 
                             </div>
                         </div>
+
+                        {{-- FOR ACCUFY ERP --}}
+                        <div class="form-group col-md-6">
+                            {!! Form::label('national_id_number', __('National ID Number'), ['class' => 'form-label']) !!}<span class="text-danger pl-1">*</span>
+                            {!! Form::text('national_id_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter employee ID No.',
+                            ]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Form::label('revenue_authority_number', __('Revenue Authority No.'), ['class' => 'form-label']) !!}<span class="text-danger pl-1">*</span>
+                            {!! Form::text('revenue_authority_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter Revenue Auth. No.',
+                            ]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Form::label('social_security_number', __('Social Security No.'), ['class' => 'form-label']) !!}<span class="text-danger pl-1">*</span>
+                            {!! Form::text('social_security_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter Social Security No.',
+                            ]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Form::label('health_insurance_number', __('Health Insurance No.'), ['class' => 'form-label']) !!}<span class="text-danger pl-1">*</span>
+                            {!! Form::text('health_insurance_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter health Insurance No.',
+                            ]) !!}
+                        </div>
+                        {{-- FOR ACCUFY ERP --}}
+
                     </div>
+
                     <div class="form-group">
                         {!! Form::label('address', __('Address'),['class'=>'form-label']) !!}<span class="text-danger pl-1">*</span>
                         {!! Form::textarea('address',null, ['class' => 'form-control','rows'=>2]) !!}
@@ -95,7 +132,7 @@
                                     'placeholder' => 'Enter Employee Code',
                                     'required' => 'required'
                                 ]) !!}
-                            </div>  
+                            </div>
                             <div class="form-group col-md-6">
                                 {!! Form::label('company_doj', 'Company Date Of Joining',['class'=>'form-label']) !!}
                                 {!! Form::date('company_doj', null, ['class' => 'form-control ','required' => 'required']) !!}
@@ -129,7 +166,7 @@
                                         <span>{{!empty($employee->designation)?$employee->designation->name:''}}</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="info">
                                         <strong>{{__('Date Of Joining')}}</strong>
@@ -164,7 +201,7 @@
                                         <div class="choose-file form-group">
                                             <label for="document[{{ $document->id }}]">
                                                 <input class="form-control file-validate @if(!empty($employeedoc[$document->id])) float-left @endif @error('document') is-invalid @enderror border-0" @if($document->is_required == 1 && empty($employeedoc[$document->id]) ) required @endif name="document[{{ $document->id}}]"  onchange="document.getElementById('{{'blah'.$key}}').src = window.URL.createObjectURL(this.files[0])" type="file"  data-filename="{{ $document->id.'_filename'}}">
-                                                <p id="" class="file-error text-danger"></p>                                                    
+                                                <p id="" class="file-error text-danger"></p>
                                             </label>
                                             <p class="{{ $document->id.'_filename'}}"></p>
 

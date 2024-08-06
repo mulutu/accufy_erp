@@ -55,7 +55,48 @@
 
                             </div>
                         </div>
+
+                        
+                        <div class="form-group col-md-6">
+                            <?php echo Form::label('national_id_number', __('National ID Number'), ['class' => 'form-label']); ?><span class="text-danger pl-1">*</span>
+                            <?php echo Form::text('national_id_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter employee ID No.',
+                            ]); ?>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <?php echo Form::label('revenue_authority_number', __('Revenue Authority No.'), ['class' => 'form-label']); ?><span class="text-danger pl-1">*</span>
+                            <?php echo Form::text('revenue_authority_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter Revenue Auth. No.',
+                            ]); ?>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <?php echo Form::label('social_security_number', __('Social Security No.'), ['class' => 'form-label']); ?><span class="text-danger pl-1">*</span>
+                            <?php echo Form::text('social_security_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter Social Security No.',
+                            ]); ?>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <?php echo Form::label('health_insurance_number', __('Health Insurance No.'), ['class' => 'form-label']); ?><span class="text-danger pl-1">*</span>
+                            <?php echo Form::text('health_insurance_number', null, [
+                                'class' => 'form-control',
+                                'required' => 'required',
+                                'placeholder' => 'Enter health Insurance No.',
+                            ]); ?>
+
+                        </div>
+                        
+
                     </div>
+
                     <div class="form-group">
                         <?php echo Form::label('address', __('Address'),['class'=>'form-label']); ?><span class="text-danger pl-1">*</span>
                         <?php echo Form::textarea('address',null, ['class' => 'form-control','rows'=>2]); ?>
@@ -110,7 +151,7 @@
                                     'required' => 'required'
                                 ]); ?>
 
-                            </div>  
+                            </div>
                             <div class="form-group col-md-6">
                                 <?php echo Form::label('company_doj', 'Company Date Of Joining',['class'=>'form-label']); ?>
 
@@ -146,7 +187,7 @@
                                         <span><?php echo e(!empty($employee->designation)?$employee->designation->name:''); ?></span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="info">
                                         <strong><?php echo e(__('Date Of Joining')); ?></strong>
@@ -188,7 +229,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?> border-0" <?php if($document->is_required == 1 && empty($employeedoc[$document->id]) ): ?> required <?php endif; ?> name="document[<?php echo e($document->id); ?>]"  onchange="document.getElementById('<?php echo e('blah'.$key); ?>').src = window.URL.createObjectURL(this.files[0])" type="file"  data-filename="<?php echo e($document->id.'_filename'); ?>">
-                                                <p id="" class="file-error text-danger"></p>                                                    
+                                                <p id="" class="file-error text-danger"></p>
                                             </label>
                                             <p class="<?php echo e($document->id.'_filename'); ?>"></p>
 

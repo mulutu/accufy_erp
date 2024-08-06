@@ -167,7 +167,7 @@ class EmployeeController extends Controller
                     'bank_name' => $request['bank_name'],
                     'bank_identifier_code' => $request['bank_identifier_code'],
                     'branch_location' => $request['branch_location'],
-                    'tax_payer_id' => $request['tax_payer_id'],
+                    'tax_payer_id' => $request['revenue_authority_number'],
                     'created_by' => \Auth::user()->creatorId(),
                 ]
             );
@@ -175,7 +175,6 @@ class EmployeeController extends Controller
             {
                 foreach($request->document as $key => $document)
                 {
-
                     $filenameWithExt = $request->file('document')[$key]->getClientOriginalName();
                     $filename        = pathinfo($filenameWithExt, PATHINFO_FILENAME);
                     $extension       = $request->file('document')[$key]->getClientOriginalExtension();
@@ -202,9 +201,7 @@ class EmployeeController extends Controller
                         ]
                     );
                     $employee_document->save();
-
                 }
-
             }
 
             $setings = Utility::settings();
@@ -218,14 +215,9 @@ class EmployeeController extends Controller
 
                 $resp = Utility::sendEmailTemplate('new_user', [$user->id => $user->email], $userArr);
                 return redirect()->route('employee.index')->with('success', __('Employee successfully created.') . ((!empty($resp) && $resp['is_success'] == false && !empty($resp['error'])) ? '<br> <span class="text-danger">' . $resp['error'] . '</span>' : ''));
-
             }
-
             return redirect()->route('employee.index')->with('success', __('Employee  successfully created.'));
-
-        }
-        else
-        {
+        }else{
             return redirect()->back()->with('error', __('Permission denied.'));
         }
     }
@@ -257,7 +249,6 @@ class EmployeeController extends Controller
 
     public function update(Request $request, $id)
     {
-
         if(\Auth::user()->can('edit employee'))
         {
             $validator = \Validator::make(
@@ -268,12 +259,16 @@ class EmployeeController extends Controller
                                    'phone' => 'required|numeric',
                                    'address' => 'required',
 //                                   'document.*' => 'mimes:jpeg,png,jpg,gif,svg,pdf,doc,zip|max:20480',
+                                    /* ADDED FOR ACCUFY ERP */
+                                   'national_id_number' => 'required',
+                                   'revenue_authority_number' => 'required',
+                                   'social_security_number' => 'required',
+                                   'health_insurance_number' => 'required',
                                ]
             );
             if($validator->fails())
             {
                 $messages = $validator->getMessageBag();
-
                 return redirect()->back()->with('error', $messages->first());
             }
 
