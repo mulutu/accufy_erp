@@ -235,9 +235,10 @@ unset($__errorArgs, $__bag); ?> border-0" <?php if($document->is_required == 1 &
 
                                             <?php
                                                 $logo=\App\Models\Utility::get_file('uploads/document/');
+                                                $path = $logo.'/document_placeholder.png';
                                             ?>
 
-                                            <img id="<?php echo e('blah'.$key); ?>" src="<?php echo e((isset($employeedoc[$document->id]) && !empty($employeedoc[$document->id])?$logo.'/'.$employeedoc[$document->id]:'')); ?>"  width="25%" />
+                                            <img id="<?php echo e('blah'.$key); ?>" src="<?php echo e((isset($employeedoc[$document->id]) && !empty($employeedoc[$document->id])?$logo.'/'.$employeedoc[$document->id]: $path )); ?>"  width="25%" />
 
                                         </div>
 

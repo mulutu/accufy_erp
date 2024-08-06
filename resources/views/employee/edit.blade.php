@@ -207,9 +207,10 @@
 
                                             @php
                                                 $logo=\App\Models\Utility::get_file('uploads/document/');
+                                                $path = $logo.'/document_placeholder.png';
                                             @endphp
 {{--                                            <img id="{{'blah'.$key}}" src=""  width="25%" />--}}
-                                            <img id="{{'blah'.$key}}" src="{{ (isset($employeedoc[$document->id]) && !empty($employeedoc[$document->id])?$logo.'/'.$employeedoc[$document->id]:'') }}"  width="25%" />
+                                            <img id="{{'blah'.$key}}" src="{{ (isset($employeedoc[$document->id]) && !empty($employeedoc[$document->id])?$logo.'/'.$employeedoc[$document->id]: $path ) }}"  width="25%" />
 
                                         </div>
 

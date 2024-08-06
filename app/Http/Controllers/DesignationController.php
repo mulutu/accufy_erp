@@ -50,7 +50,7 @@ class DesignationController extends Controller
                 $request->all(), [
                                    'branch_id' => 'required',
                                    'department_id' => 'required',
-                                   'name' => 'required|max:20',
+                                   'name' => 'required|max:100',
                                ]
             );
             if($validator->fails())
