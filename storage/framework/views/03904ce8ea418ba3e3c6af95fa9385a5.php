@@ -292,12 +292,7 @@ unset($__errorArgs, $__bag); ?> border-0" <?php if($document->is_required == 1 &
                                 <?php echo Form::text('branch_location',null, ['class' => 'form-control']); ?>
 
                             </div>
-                            <div class="form-group col-md-6">
-                                <?php echo Form::label('tax_payer_id', __('Tax Payer Id'),['class'=>'form-label']); ?>
-
-                                <?php echo Form::text('tax_payer_id',null, ['class' => 'form-control']); ?>
-
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

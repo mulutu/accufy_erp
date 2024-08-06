@@ -254,10 +254,10 @@
                                 {!! Form::label('branch_location', __('Branch Location'),['class'=>'form-label']) !!}
                                 {!! Form::text('branch_location',null, ['class' => 'form-control']) !!}
                             </div>
-                            <div class="form-group col-md-6">
+                            {{--<div class="form-group col-md-6">
                                 {!! Form::label('tax_payer_id', __('Tax Payer Id'),['class'=>'form-label']) !!}
                                 {!! Form::text('tax_payer_id',null, ['class' => 'form-control']) !!}
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>

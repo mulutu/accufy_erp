@@ -67,6 +67,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     {{-- FOR ACCUFY ERP --}}
                                     <div class="form-group col-md-6">
                                         {!! Form::label('national_id_number', __('National ID Number'), ['class' => 'form-label']) !!}<span class="text-danger pl-1">*</span>
@@ -273,13 +274,13 @@
                                             'placeholder' => 'Enter branch location',
                                         ]) !!}
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    {{-- <div class="form-group col-md-6">
                                         {!! Form::label('tax_payer_id', __('Tax Payer Id'), ['class' => 'form-label']) !!}
                                         {!! Form::text('tax_payer_id', old('tax_payer_id'), [
                                             'class' => 'form-control',
                                             'placeholder' => 'Enter tax payer id',
                                         ]) !!}
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
