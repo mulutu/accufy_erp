@@ -93,7 +93,7 @@
                                         ]) !!}
                                     </div>
                                     <div class="form-group col-md-6">
-                                        {!! Form::label('health_insurance_number', __('NHIF Number'), ['class' => 'form-label']) !!}<span class="text-danger pl-1">*</span>
+                                        {!! Form::label('health_insurance_number', __('Health Insurance No.'), ['class' => 'form-label']) !!}<span class="text-danger pl-1">*</span>
                                         {!! Form::text('health_insurance_number', old('health_insurance_number'), [
                                             'class' => 'form-control',
                                             'required' => 'required',
