@@ -426,7 +426,10 @@ class ProductServiceController extends Controller
         if (Auth::user()->can('manage pos') && $request->ajax() && isset($lastsegment) && !empty($lastsegment)) {
 
             $output = "";
-            if($request->war_id == '0'){
+
+            if($request->war_id == '' && $request->cat_id == ''){
+                $products = ProductService::getallproducts()->with(['unit'])->get();
+            }else if($request->war_id == '0'){
                 $ids = WarehouseProduct::where('warehouse_id',1)->get()->pluck('product_id')->toArray();
 
                 if ($request->cat_id !== '' && $request->search == '') {
@@ -463,7 +466,12 @@ class ProductServiceController extends Controller
             {
                 foreach ($products as $key => $product)
                 {
-                    $quantity = $product->warehouseProduct($product->id, $request->war_id != 0 ? $request->war_id : 7);
+                    // added for accufy erp //
+                    if($request->war_id == ''){
+                        $quantity = $product->quantity;
+                    }else{
+                        $quantity = $product->warehouseProduct($product->id, $request->war_id != 0 ? $request->war_id : 7);
+                    }
 
                     $unit = (!empty($product) && !empty($product->unit)) ? $product->unit->name : '';
 
